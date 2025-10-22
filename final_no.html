@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Answer is...</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #ffccbc; /* Light orange/peach */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 4em;
+            color: #d84315; /* Deep orange */
+            margin-bottom: 20px;
+            animation: pulseText 2s infinite alternate;
+            text-align: center; 
+            padding: 0 20px;
+        }
+        p {
+            font-size: 1.5em;
+            color: #5d4037;
+        }
+        @keyframes pulseText {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.05); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="missyou-body">
+    <h1>Gottu, gottu! Nee sumne sullan heluttiddiya! 🤥</h1>
+    <p>...but deep down, I know you missed me. 😉</p>
+    <p style="margin-top: 50px;">(Thanks for playing!)</p>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Miss U Too!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            overflow: hidden;
+        }
+        .firework {
+            position: absolute;
+            width: 10px; height: 10px;
+            background: transparent;
+            border-radius: 50%;
+            opacity: 0;
+            /* SMOOTHNESS: Tell browser this will change */
+            will-change: transform, opacity;
+            animation: explode 1s ease-out forwards;
+        }
+        @keyframes explode {
+            0% { opacity: 1; transform: scale(1) translate(0, 0); }
+            100% { opacity: 0; transform: scale(3) translate(var(--x), var(--y)); }
+        }
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 5em;
+            color: white;
+            text-shadow: 3px 3px #ff4081;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="missyou-body">
+    <h1>I Miss U Too! 🥳</h1>
+    
+    <script>
+        function createFirework(x, y) {
+            const firework = document.createElement('div');
+            firework.className = 'firework';
+            firework.style.left = `${x}px`;
+            firework.style.top = `${y}px`;
+            
+            // Random colors
+            firework.style.boxShadow = `
+                0 0 0 5px hsla(${Math.random() * 360}, 100%, 50%, 1),
+                0 0 0 10px hsla(${Math.random() * 360}, 100%, 50%, 0.8),
+                0 0 0 15px hsla(${Math.random() * 360}, 100%, 50%, 0.6)
+            `;
+
+            // Random explosion direction
+            firework.style.setProperty('--x', `${(Math.random() - 0.5) * 200}px`);
+            firework.style.setProperty('--y', `${(Math.random() - 0.5) * 200}px`);
+            
+            document.body.appendChild(firework);
+            setTimeout(() => firework.remove(), 1000);
+        }
+
+        // Fire multiple fireworks on load
+        for (let i = 0; i < 20; i++) {
+            setTimeout(() => {
+                createFirework(
+                    Math.random() * window.innerWidth,
+                    Math.random() * window.innerHeight
+                );
+            }, i * 50);
+        }
+    </script>
+</body>
+</html>

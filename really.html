@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Really?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific style to make 'Yes' float over the page */
+        #reallyBtnYes { 
+            position: relative; 
+            /* SMOOTHNESS: Use a smoother transition curve and hardware acceleration */
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease-out;
+            transform: translateZ(0); 
+
+            background-color: #ff9800; 
+            box-shadow: 0 5px 0 #e65100;
+        }
+    </style>
+</head>
+<body class="missyou-body">
+
+    <div class="container missyou-container">
+        <div class="question" style="color: #ff9800;">Really? Are you sure? 🤨</div>
+        
+        <p>This is your last chance to say yes! 😉</p>
+
+        <div class="button-group" style="position: relative; min-height: 100px;">
+            <button id="reallyBtnYes" class="option-button" onclick="flyAway(event)">Yes</button>
+            
+            <button id="reallyBtnNo" class="option-button" onclick="handleReallyResponse('No')">No</button>
+        </div>
+        
+        <div id="responseMessage" class="response-message" style="margin-top: 50px;">
+            (Try to catch the 'Yes' button if you dare!)
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

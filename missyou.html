@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Miss Me?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="missyou-body">
+
+    <div class="container missyou-container">
+        <img id="missYouBear" 
+             src="tkthao219-bubududu.webp" 
+             alt="Cute Bubu and Dudu Bear with heart" 
+             style="width: 100px; margin-bottom: 20px;"
+        >
+
+        <div class="question">Do you miss me? 🥺</div>
+        
+        <p>I hope the answer is one of these... 😉</p>
+
+        <div class="button-group">
+            <button id="btnYes" class="option-button" onclick="handleResponse('Yes')">Yes</button>
+            <button id="btnNo" class="option-button" onclick="handleResponse('No')">No</button> 
+            <button id="btnOfCourse" class="option-button" onclick="handleResponse('Of Course')">Of Course!</button>
+        </div>
+        
+        <div id="responseMessage" class="response-message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
